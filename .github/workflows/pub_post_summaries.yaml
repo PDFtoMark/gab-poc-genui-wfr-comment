@@ -1,0 +1,15 @@
+# Copy of flutter/genui .github/workflows/pub_post_summaries.yaml (caller side)
+name: Comment on the pull request
+
+on:
+  workflow_run:
+    workflows:
+      - Publish
+    types:
+      - completed
+
+jobs:
+  upload:
+    uses: dart-lang/ecosystem/.github/workflows/post_summaries.yaml@main
+    permissions:
+      pull-requests: write
